@@ -12,9 +12,21 @@ weight = st.number_input('Peso (kg)', min_value=0.0, value=70.0)
 
 # Entrada de duração: horas e minutos
 st.subheader('Duração da Sessão')
-horas = st.number_input('Horas', min_value=0, max_value=5, value=1)
-minutos = st.number_input('Minutos', min_value=0, max_value=59, value=0)
-session_duration = horas + (minutos / 60)
+
+duracoes = {
+    '30 minutos': 0.5,
+    '45 minutos': 0.75,
+    '1 hora': 1.0,
+    '1h30': 1.5,
+    '2 horas': 2.0,
+    '2h30': 2.5,
+    '3 horas': 3.0
+}
+
+duracao_escolhida = st.selectbox('Escolha a duração:', list(duracoes.keys()))
+session_duration = duracoes[duracao_escolhida]
+
+st.write(f'Duração convertida para horas (float): {session_duration}')
 
 height = st.number_input('Altura (m)', min_value=0.0, value=1.70)
 avg_bpm = st.number_input('Média de BPM durante o treino', min_value=0.0, value=120.0)
