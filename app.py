@@ -10,21 +10,8 @@ st.title('Previsão de Calorias Queimadas')
 fat_percentage = st.number_input('Percentual de Gordura Corporal (%)', min_value=0.0, max_value=100.0, value=20.0)
 weight = st.number_input('Peso (kg)', min_value=0.0, value=70.0)
 
-# Entrada de duração: horas e minutos
-st.subheader('Duração da Sessão')
+session_duration = st.number_input('Duração da Sessão (horas)', min_value=0.0, value=1.0)
 
-duracoes = {
-    '30 minutos': 0.5,
-    '45 minutos': 0.75,
-    '1 hora': 1.0,
-    '1h30': 1.5,
-    '2 horas': 2.0,
-    '2h30': 2.5,
-    '3 horas': 3.0
-}
-
-duracao_escolhida = st.selectbox('Escolha a duração:', list(duracoes.keys()))
-session_duration = duracoes[duracao_escolhida]
 
 st.write(f'Duração convertida para horas (float): {session_duration}')
 
