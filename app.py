@@ -9,12 +9,7 @@ st.title('Previsão de Calorias Queimadas')
 # Entradas
 fat_percentage = st.number_input('Percentual de Gordura Corporal (%)', min_value=0.0, max_value=100.0, value=20.0)
 weight = st.number_input('Peso (kg)', min_value=0.0, value=70.0)
-
 session_duration = st.number_input('Duração da Sessão (horas)', min_value=0.0, value=1.0)
-
-
-st.write(f'Duração convertida para horas (float): {session_duration}')
-
 height = st.number_input('Altura (m)', min_value=0.0, value=1.70)
 avg_bpm = st.number_input('Média de BPM durante o treino', min_value=0.0, value=120.0)
 age = st.number_input('Idade', min_value=0, value=25)
